@@ -10,9 +10,11 @@ module org.aluguelcarros {
     requires org.kordamp.bootstrapfx.core;
     //requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.xml.crypto;
+    requires java.desktop;
 
     opens org.aluguelcarros to javafx.fxml;
     exports org.aluguelcarros;
-    exports org.aluguelcarros.Controller;
-    opens org.aluguelcarros.Controller to javafx.fxml;
+    exports org.aluguelcarros.controller;
+    opens org.aluguelcarros.controller to javafx.fxml;
 }
