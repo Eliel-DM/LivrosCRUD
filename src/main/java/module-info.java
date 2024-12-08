@@ -1,4 +1,4 @@
-module org.aluguelcarros {
+module org.crud.demo {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -8,13 +8,10 @@ module org.aluguelcarros {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    //requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
-    requires java.xml.crypto;
-    requires java.desktop;
+    requires jakarta.persistence; // Mantido para compatibilidade JPA// Permitir acesso ao JavaFX para refletir as classes
+    requires org.hibernate.orm.core; // Hibernate ORM Core
+    exports org.crud.demo;
+    opens org.crud.demo;
 
-    opens org.aluguelcarros to javafx.fxml;
-    exports org.aluguelcarros;
-    exports org.aluguelcarros.controller;
-    opens org.aluguelcarros.controller to javafx.fxml;
 }
