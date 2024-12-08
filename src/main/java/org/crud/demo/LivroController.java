@@ -13,7 +13,14 @@ public class LivroController {
     }
 
 
-    public void listarLivros(){
+    public List<Livro> listarLivros(){
+        List<Livro> livrosTemp = new ArrayList<>();
+        livrosTemp = livroService.listarLivros();
+        System.out.println("Livros Cadastrados: ");
+        return livrosTemp;
+    }
+
+    public void listarLivrosConsole(){
         List<Livro> livrosTemp = new ArrayList<>();
         livrosTemp = livroService.listarLivros();
         System.out.println("Livros Cadastrados: ");
@@ -29,6 +36,7 @@ public class LivroController {
     public void atualizarLivro(Long id,String titulo,String autor,Integer anoPublicacao,String genero){
         Livro livroTemp = new Livro(id,titulo,autor,anoPublicacao,genero);
         livroService.atualizarLivro(livroTemp);
+        System.out.println("Livro Atualizado!");
     }
 
 }
